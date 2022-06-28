@@ -1,0 +1,153 @@
+﻿<Window x:Class="CashApp.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:l="clr-namespace:CashApp"
+		xmlns:w="clr-namespace:CashApp.Wallets"
+		xmlns:t="clr-namespace:CashApp.Transactions"
+		xmlns:s="clr-namespace:CashApp.Statistics"
+		xmlns:ui="clr-namespace:CashApp.UIElements"
+		mc:Ignorable="d"
+		Title="Мои финансы" Height="700" Width="1020"
+        WindowStartupLocation="CenterScreen"
+		WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+	
+	<Border CornerRadius="10" Background="{DynamicResource Deep}">
+		<Grid>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="40"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			
+			<!--  WINDOW TOP  -->
+            <l:WindowTop x:Name="XTop" Title="Мои финансы" Grid.Column="1"
+						 Background="{DynamicResource Background}"
+						 CornerRadius="0,10,0,0"
+                         BorderThickness="0,1,1,0"
+						 BorderBrush="{DynamicResource Accent3}">
+				<l:WindowTop.Effect>
+					<DropShadowEffect BlurRadius="25" ShadowDepth="5" Opacity=".2" Direction="270"/>
+				</l:WindowTop.Effect>
+			</l:WindowTop>
+
+
+			<!--  MENU  -->
+			<Border Padding="0,10,0,10"
+					Background="{DynamicResource Background}"
+					Width="40"
+					CornerRadius="0,0,0,10"
+                    BorderThickness="1,0,0,1"
+					BorderBrush="{DynamicResource Accent3}"
+					Grid.Row="1">
+
+				<Grid>
+
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition Height="auto"/>
+					</Grid.RowDefinitions>
+					
+					<!--  MENU BUTTONS  -->
+					<StackPanel>
+
+                        <!--  CATEGORIES BUTTON  -->
+						<ui:FlatButton x:Name="XCategories" Height="40"
+									   CornerRadius="0" Background="Transparent">
+							<WrapPanel Height="20" Width="17">
+								<TextBlock Foreground="{DynamicResource MainText}" FontSize="9.5" Text="▢"/>
+								<TextBlock Foreground="{DynamicResource MainText}" FontSize="9.5" Text="▢"/>
+								<TextBlock Foreground="{DynamicResource MainText}" FontSize="9.5" Margin="0,-4,0,0" Text="▢"/>
+								<TextBlock Foreground="{DynamicResource MainText}" FontSize="9.5" Margin="0,-4,0,0" Text="▢"/>
+							</WrapPanel>
+						</ui:FlatButton>
+
+                        <!--  CURRENCIES BUTTON  -->
+						<ui:FlatButton x:Name="XCurrencies" Height="40"
+									   CornerRadius="0" Background="Transparent">
+							<TextBlock FontSize="18" Foreground="{DynamicResource MainText}"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"
+									   Text="$"/>
+						</ui:FlatButton>
+
+                        <!--  PLANNED BUTTON  -->
+                        <ui:FlatButton x:Name="XPlanned" Height="40"
+									   CornerRadius="0" Background="Transparent">
+                            <TextBlock FontSize="12" Foreground="{DynamicResource MainText}"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"
+									   Text="🕒"/>
+                        </ui:FlatButton>
+
+                        <!--  TEMPLATES BUTTON  -->
+						<ui:FlatButton x:Name="XTemplates" Height="40"
+									   CornerRadius="0" Background="Transparent">
+							<TextBlock FontSize="18" Foreground="{DynamicResource MainText}"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"
+									   Text="⎘"/>
+						</ui:FlatButton>
+
+					</StackPanel>
+
+					<!--  THEME BUTTON  -->
+					<ui:FlatButton x:Name="XTheme" Height="40" Grid.Row="1"
+								   CornerRadius="0" Background="Transparent">
+						<TextBlock FontSize="18" Foreground="{DynamicResource MainText}"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"
+								   Text="☾"/>
+					</ui:FlatButton>
+
+				</Grid>
+
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="25" ShadowDepth="10" Opacity=".2" Direction="270"/>
+				</Border.Effect>
+				
+			</Border>
+
+			
+			<!--  WINDOW CORNER  -->
+			<Border Background="{DynamicResource Background}"
+                    CornerRadius="10,0,0,0"
+                    BorderThickness="1,1,0,0"
+					BorderBrush="{DynamicResource Accent3}"/>
+			
+			
+			<!--  WINDOW BODY  -->
+			<DockPanel Margin="20" Grid.Column="1" Grid.Row="1">
+
+				<t:TransactionsBlock x:Name="XTransactions"
+									 DockPanel.Dock="Right"
+									 Width="300" Height="630"
+									 Margin="10,0,0,0"/>
+
+				<w:WalletsBlock x:Name="XWallets"
+								DockPanel.Dock="Top"
+								Width="620" Height="310"
+								Margin="0,0,10,10"/>
+
+				<s:StatisticBlock x:Name="XProfits"
+								  DockPanel.Dock="Left"
+								  Width="300" Height="300"
+								  Margin="0,10,10,0"/>
+
+				<s:StatisticBlock x:Name="XLosses"
+								  Width="300" Height="300"
+								  Margin="10,10,10,0"/>
+
+			</DockPanel>
+
+		</Grid>
+	</Border>
+	
+</Window>

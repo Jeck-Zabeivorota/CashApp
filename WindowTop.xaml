@@ -1,0 +1,53 @@
+﻿<Border x:Class="CashApp.WindowTop"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:ui="clr-namespace:CashApp.UIElements"
+			 mc:Ignorable="d"
+			 CornerRadius="10,10,0,0"
+			 Background="{DynamicResource Accent1}"
+			 BorderThickness="1,1,1,0"
+             BorderBrush="{DynamicResource Accent3}"
+			 Height="30" d:DesignWidth="300">
+
+	<Grid>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="30"/>
+			<ColumnDefinition Width="30"/>
+		</Grid.ColumnDefinitions>
+
+		<!--  DRAG WINDOW AND CAPTURE  -->
+		<Border x:Name="XBody" Background="Transparent" Grid.ColumnSpan="3">
+            <TextBlock VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource MainText}"
+                       Text="Окно"/>
+        </Border>
+
+		<!--  MINIMIZE BUTTON  -->
+		<ui:FlatButton x:Name="XMinButton"
+						Grid.Column="1"
+						CornerRadius="0"
+                        Background="Transparent">
+				<TextBlock HorizontalAlignment="Center"
+                            FontSize="20" Foreground="{DynamicResource MainText}" FontWeight="DemiBold"
+                            Text="-"/>
+		</ui:FlatButton>
+
+		<!--  CLOSE BUTTON  -->
+		<ui:FlatButton x:Name="XCloseButton"
+						Grid.Column="2"
+						CornerRadius="0,10,0,0"
+						Background="Transparent"
+                        MouseDown_Color="#F04A2C">
+			<TextBlock HorizontalAlignment="Center"
+						FontSize="20" Foreground="{DynamicResource MainText}" FontWeight="DemiBold"
+						Text="×"/>
+		</ui:FlatButton>
+
+	</Grid>
+	
+</Border>

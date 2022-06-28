@@ -1,0 +1,10 @@
+﻿<Application x:Class="CashApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary x:Name="Colors" Source="LightColors.xaml"/>
+
+    </Application.Resources>
+</Application>
