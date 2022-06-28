@@ -1,0 +1,66 @@
+﻿<Slider x:Class="CashApp.UIElements.FlatSlider"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             MouseLeftButtonDown="Slider_MouseLeftButtonDown"
+             MouseLeftButtonUp="Slider_MouseLeftButtonUp"
+             mc:Ignorable="d" d:DesignWidth="200">
+    
+    <Slider.Template>
+        <ControlTemplate TargetType="Slider">
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto" x:Name="row"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition x:Name="column"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border x:Name="PART_Border"
+                        Grid.Row="1" Grid.Column="1"
+                        CornerRadius="2"
+                        Background="{DynamicResource MainText}"
+                        Width="{TemplateBinding Width}"
+                        Height="2"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"/>
+
+                <Track x:Name="PART_Track"
+                       Grid.Row="1" Grid.Column="1"
+                       Width="{TemplateBinding Width}"
+                       Height="{TemplateBinding Height}"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Center">
+
+                    <Track.Thumb>
+                        <Thumb>
+                            <Thumb.Template>
+                                <ControlTemplate TargetType="Thumb">
+
+                                    <Border x:Name="PART_Border"
+                                            CornerRadius="10"
+                                            Background="{DynamicResource Background}"
+                                            BorderThickness="2"
+                                            BorderBrush="{DynamicResource MainText}"
+                                            Width="20" Height="20"/>
+
+                                </ControlTemplate>
+                            </Thumb.Template>
+                        </Thumb>
+                    </Track.Thumb>
+                    
+                </Track>
+                
+            </Grid>
+
+        </ControlTemplate>
+    </Slider.Template>
+</Slider>

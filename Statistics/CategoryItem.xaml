@@ -1,0 +1,35 @@
+﻿<Grid x:Class="CashApp.Statistics.CategoryItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Margin="0,0,0,10">
+    
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20"/>
+        <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition/>
+    </Grid.RowDefinitions>
+
+    
+    <!--  POINT  -->
+    <Ellipse x:Name="XPoint" Width="8" Height="8" Fill="Tomato"/>
+
+    
+    <!--  CAREGORY  -->
+    <TextBlock x:Name="XCategory" Grid.Column="1"
+               Foreground="{DynamicResource MainText}"
+               FontSize="14" Text="Category"/>
+
+
+    <!--  INFO  -->
+    <TextBlock x:Name="XInfo" Grid.Column="1" Grid.Row="1"
+               Foreground="{DynamicResource SecondText1}"
+               FontSize="11" Text="200,00 $ | 16,4%"/>
+
+</Grid>

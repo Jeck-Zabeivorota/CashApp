@@ -1,0 +1,23 @@
+﻿<Border x:Class="CashApp.UIElements.Check"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		mc:Ignorable="d"
+		CornerRadius="10"
+		Background="Tomato"
+        Cursor="Hand"
+        MouseUp="Check_MouseUp"
+		Width="40" Height="20">
+
+	<Border x:Name="XThumb"
+			CornerRadius="10"
+			Width="20"
+			Background="{DynamicResource Accent3}"
+			HorizontalAlignment="Left">
+		<Border.Effect>
+			<DropShadowEffect BlurRadius="5" ShadowDepth="0" Opacity=".15" Direction="270"/>
+		</Border.Effect>
+	</Border>
+
+</Border>

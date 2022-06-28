@@ -1,0 +1,65 @@
+﻿<Window x:Class="CashApp.Templates.TemplateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:CashApp"
+        xmlns:ui="clr-namespace:CashApp.UIElements"
+        mc:Ignorable="d"
+        Title="Шаблон" Height="260" Width="250"
+        WindowStartupLocation="CenterScreen"
+		WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--  WINDOW TOP  -->
+        <l:WindowTop x:Name="XTop" Title="Шаблон"/>
+
+        <!--  WINDOW BODY  -->
+        <Border CornerRadius="0,0,10,10"
+                Background="{DynamicResource Background}"
+                BorderThickness="1"
+                BorderBrush="{DynamicResource Accent3}"
+                Grid.Row="1">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <!--  PROPERTIES  -->
+                <ui:ScrollPanel x:Name="_XProperties_" Margin="15,15,0,15">
+                    <StackPanel/>
+                </ui:ScrollPanel>
+
+                <!--  BUTTONS  -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" FlowDirection="RightToLeft">
+
+                    <ui:FlatButton x:Name="XDone" Margin="10,0,0,5" Height="20" Width="75">
+                        <TextBlock Foreground="{DynamicResource MainText}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Создать"/>
+                    </ui:FlatButton>
+
+                    <ui:FlatButton x:Name="XCancel" Margin="10,0,0,5" Height="20" Width="75">
+                        <TextBlock Foreground="{DynamicResource MainText}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Отменить"/>
+                    </ui:FlatButton>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+    
+</Window>

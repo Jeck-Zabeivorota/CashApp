@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="CashApp.Wallets.GroupWallet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             MouseLeftButtonDown="Wallet_MouseDown"
+             MouseLeftButtonUp="Wallet_MouseUp"
+             MouseLeave="Wallet_MouseLeave"
+             Height="80" Width="160">
+
+    <Grid>
+        
+        <!--  SECOND BODY 2  -->
+        <Border x:Name="XSecondBody2" CornerRadius="10" Margin="10,10,10,0"
+                Height="60" VerticalAlignment="Top"
+                Background="#FF9132D7" Opacity=".33">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="5" Opacity=".30" Direction="270" />
+            </Border.Effect>
+        </Border>
+
+        
+        <!--  SECOND BODY 1  -->
+        <Border x:Name="XSecondBody1" CornerRadius="10" Margin="5,5,5,0"
+                Height="60" VerticalAlignment="Top"
+                Background="#FF9132D7" Opacity=".33"/>
+
+        
+        <!--  MAIN BODY  -->
+        <Border x:Name="XBody" CornerRadius="10"
+                Height="60" VerticalAlignment="Top"
+                Background="#FF9132D7">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                
+                <!--  ICON  -->
+                <Grid>
+                    <Border CornerRadius="15" Background="White" Width="25" Height="25">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" ShadowDepth="3" Opacity=".15" Direction="270" />
+                        </Border.Effect>
+                    </Border>
+
+                    <Border CornerRadius="15" Width="25" Height="25">
+                        <Image x:Name="XIcon" Width="15" Height="15" />
+                    </Border>
+                </Grid>
+
+                
+                <!--  CAPTURE  -->
+                <TextBlock x:Name="XCapture" Grid.Column="1" Foreground="White" TextWrapping="Wrap"
+                           FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                
+                <!--  WALLETS  -->
+                <TextBlock x:Name="XWallets" Grid.Row="1" Grid.ColumnSpan="2" Foreground="White" Opacity="0.7"
+                           FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,10,0"/>
+
+                
+            </Grid>
+            
+        </Border>
+    </Grid>
+</UserControl>

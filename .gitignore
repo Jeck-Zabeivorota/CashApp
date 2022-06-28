@@ -1,0 +1,5 @@
+bin/
+obj/
+App.config
+CashApp.csproj
+packages.config
